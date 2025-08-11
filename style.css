@@ -116,7 +116,7 @@ a {
 }
 
 .arrow-button:hover {
-  background-color: #333;
+  /* background-color: #333; */
   color: blue;
 }
 
@@ -143,6 +143,7 @@ a {
     display: block;
     color: white;
     text-decoration: underline;
+    gap: 20px;
 }
 .footer-links a {
     color: white;
@@ -150,6 +151,9 @@ a {
 }
 /* Responsive styles */
 @media (max-width: 768px) {
+    .navbar {
+        padding: 20px;
+    }
   .nav-links {
     display: none;
     position: absolute;
@@ -168,5 +172,38 @@ a {
 
   .hamburger {
     display: block;
+    border: 3px solid black;
+    border-radius: 12px;
+    width: 50px;
+    height: 50px;
+    padding-left: 9px;
   }
+  .hero {
+    flex-direction: column;
+    display: block;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+  }
+  .hero-content {
+    width: 280px;
+    /* text-align: center; */
+  }
+  .hero-content h1,
+  .hero-content h2 {
+    text-align: justify;
+  }
+  .hero-img img {
+    width: 100%;
+    border-radius: 0%;
+  }
+  .footer {
+    display: grid;
+    padding: 20px;
+    gap: 30px;
+  }
+  .footer-contact {
+    gap: 30px;
+  }
+  
 }
