@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+a {
+     text-decoration: none;
+}
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 200px;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+}
+.logo a {
+    color: #000;
+}
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #444;
+}
+
+.nav-links a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger menu (mobile) */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.page-header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h2 {
+    font-size: 1.4rem;
+    margin: 15px;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0 15px 15px;
+}
+
+.btn {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 15px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #444;
+}
+
+.cta {
+    text-align: center;
+    padding: 50px 20px;
+    background: #8f8787;
+    color: #fff;
+}
+
+.cta h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+    color: white;
+    align-items: center;
+    /* gap: 10px; */
+    padding: 20px 200px;
+}
+.footer h3 {
+    text-align: justify;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.footer-content a {
+    color: white;
+    text-decoration: underline;
+}
+.footer-contact a{
+    display: block;
+    color: white;
+    text-decoration: underline;
+    gap: 20px;
+}
+.footer-links a {
+    color: white;
+    text-decoration: underline;
+}
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px;
+        border-bottom: 0;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 58px;
+        width: 100%;
+        text-align: center;
+        background: #fff;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .project-card img {
+        height: 180px;
+    }
+
+    .footer {
+        display: grid;
+        padding: 20px;
+        gap: 30px;
+    }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .project-card img {
+        height: 160px;
+    }
+
+    .project-card h2 {
+        font-size: 1.2rem;
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+    }
+    .btn {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+}
